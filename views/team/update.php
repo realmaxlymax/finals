@@ -9,12 +9,12 @@ use yii\widgets\ActiveForm;
 
 		<?php $form = ActiveForm::begin() ?>
 
-			<?= $form->field($model, 'Team Name')->textInput() ?>
+			<?= $form->field($model, 'team_name')->textInput() ?>
 
-			<?= $form->field($model, 'Country')->textInput() ?>
+			<?= $form->field($model, 'country')->textInput() ?>
 			
 			<div class="form-group">
-    	<?= Html::submitButton("Update Artist", ['class'=>'btn btn-primary']); ?>
+    	<?= Html::submitButton("Update Team", ['class'=>'btn btn-primary']); ?>
 			</div>
 
 

@@ -31,18 +31,22 @@ class TeamController extends \yii\web\Controller
         return $this->render('index',compact('team'));
     }
 
-    public function actionUpdate()
+    public function actionUpdate($id)
     {
         $model = Team::findOne($id);
 
             if($model->load(Yii::$app->request->post()) && $model->save()) {
             $this->redirect(['/team/view', 'id'=>$id]);
+
             }
+            return $this->render('update', compact('model'));
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        return $this->render('view');
+        $model = Team::findOne($id);
+
+        return $this->render('view',compact('model'));
     }
 
 }

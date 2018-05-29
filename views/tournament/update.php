@@ -1,9 +1,20 @@
 <?php
-/* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 ?>
-<h1>tournament/update</h1>
+<h1>Update Your Tournament</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+<div class="row">
+	<div class="col-md-6">
+
+		<?php $form = ActiveForm::begin() ?>
+
+
+			<?= $form->field($model, 'event_name')->textInput() ?>
+            <?= $form->field($model, 'location')->textInput() ?>
+			
+			<div class="form-group">
+    	<?= Html::submitButton("Update tournament", ['class'=>]); ?>
+			</div>
+
+			<?php ActiveForm::end(); ?>

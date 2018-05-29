@@ -1,9 +1,25 @@
 <?php
-/* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 ?>
-<h1>roster/update</h1>
+<h1>Update Your Roster</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+<div class="row">
+	<div class="col-md-6">
+
+		<?php $form = ActiveForm::begin() ?>
+
+            <?= $form->field($model, 'team_id')->textInput() ?>
+        
+			<?= $form->field($model, 'team_captain')->textInput() ?>
+
+			<?= $form->field($model, 'no-players')->textInput() ?>
+			
+			<<div class="form-group">
+    	<?= Html::submitButton("Update Tshirt", ['class'=>'btn btn-primary']); ?>
+			</div>
+
+
+			<?php ActiveForm::end(); ?>
+	</div>
+</div>

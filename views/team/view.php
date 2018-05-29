@@ -4,7 +4,7 @@ use yii\helpers\html;
 
 
 $this->params['breadcrums'][] = ['label'=> 'Team','url'=>['/team/index']];
-$this->params['breadcrums'][] = $model->name;
+$this->params['breadcrums'][] = $model->team_name;
 
 ?>
 <h1>Team</h1>
@@ -12,18 +12,18 @@ $this->params['breadcrums'][] = $model->name;
 <?= DetailView::widget([
 'model' => $model,
 'attributes' => [
-'team',
+'team_name',
 'country'
 ]]); ?>
 
 <div class="pull-right">
 	<?= Html::a('Update Roster',
-            ['/artist/update','id'=>$model->id],
-            ['class'=>'btn btn-primary glyphicon glyphicon-pencil']);?>
+            ['/team/update','id'=>$model->id],
+            ['class'=>'btn btn-primary ']);?>
     <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger glyphicon glyphicon-trash',
+            'class' => 'btn btn-danger ',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this music?',
+                'confirm' => 'Are you sure you want to delete this team?',
                 'method' => 'post',
             ],
         ]) ?>
